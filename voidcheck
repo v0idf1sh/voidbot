@@ -1,5 +1,8 @@
 #!/bin/dash
 
+# Edit line 13 with the path to your bot.js and where you'd like the bot to write the log to.
+# If you want the log overwritten with every start, change ">>" to ">"
+
 tmpbotPID=`pgrep node`
 
 if pgrep node >/dev/null
@@ -7,7 +10,7 @@ then
 	exit
 else
 	echo "Bot is down, restarting it."
-	node /home/abby/bots/voidbot/bot.js >> /home/abby/bots/voidbot/logs/voidbot.log &
+	node /path/to/voidbot/bot.js >> /path/to/voidbot/logs/voidbot.log &
 fi
 
 exit
