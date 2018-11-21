@@ -1,0 +1,60 @@
+#!/bin/dash
+
+# Place this script in /usr/bin and chmod a+x it.
+# If you wish not to put this in /usr/bin, edit
+#   the last line "exec /usr/bin/voidconsole" to
+#   "exec /absolute/path/to/voidconsole"
+
+# Edit your paths in these variables.
+botlocation=/home/abby/bots/voidbot/
+loglocation=/home/abby/bots/voidbot/logs/
+
+echo "
+    ******************************
+    *  Please enter an option... *
+    *                            *
+    *  1. Start Bot...           *
+    *  2. Stop Bot...            *
+    *  3. Restart Bot...         *
+    *  4. Exit...                *
+    *                            *
+    ******************************\n"
+botPID=`pgrep node`
+echo "    Bot PID: " $botPID
+
+read -p "    Option: " opt
+
+case "$opt" in
+	1)
+		echo "    Starting bot..."
+		node ${botlocation}bot.js >> ${loglocation}voidbot.log &
+		sleep 1s
+		clear
+		;;
+	2)
+		echo "    Stopping bot..."
+		kill $botPID
+		sleep 1s
+		clear
+		;;
+	3)
+		echo "    Restarting bot..."
+		kill -9 $botPID
+		node ${botlocation}bot.js >> ${loglocation}voidbot.log &
+		sleep 1s
+		clear
+		echo "    Bot restarted."
+		;;
+	4)
+		echo "    Quitting this script..."
+		sleep 1s
+		clear
+		exit
+		;;
+	*)
+		clear
+		echo "    Invalid option..."
+		;;
+esac
+
+exec /usr/bin/voidconsole

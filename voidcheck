@@ -1,0 +1,13 @@
+#!/bin/dash
+
+tmpbotPID=`pgrep node`
+
+if pgrep node >/dev/null
+then
+	exit
+else
+	echo "Bot is down, restarting it."
+	node /home/abby/bots/voidbot/bot.js >> /home/abby/bots/voidbot/logs/voidbot.log &
+fi
+
+exit

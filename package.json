@@ -1,0 +1,8 @@
+{
+	"name": "<BOT_NAME>",
+	"version": "1.0.0",
+	"description": "Place your description here.",
+	"main": "bot.js",
+	"author": "<YOUR_NAME>",
+	"dependencies": {}
+}
