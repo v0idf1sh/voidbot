@@ -99,7 +99,7 @@ client.on('message', message => {
 		*  There are two ways to go about using the following block of code. You can use an accompanying script to get
 		*  role IDs and replace "<ROLE_ID>" with the proper role ID to restrict the use of those commands to administrators
 		*  -- OR --
-		*  Remove lines 97, 122, 123, 124 (the if, else statement checking the role ID) and simply don't tell anyone about
+		*  Remove lines 106, 131, 132, 133 (the if, else statement checking the role ID) and simply don't tell anyone about
 		*  the commands. If you do this I recommend a separate channel that only the bot and admins can see to send these commands.
 		*/
 		if (message.content.charAt(0) === "/"){
