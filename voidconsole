@@ -6,8 +6,8 @@
 #   "exec /absolute/path/to/voidconsole"
 
 # Edit your paths in these variables.
-botlocation=/home/abby/bots/voidbot/
-loglocation=/home/abby/bots/voidbot/logs/
+botlocation=/path/to/voidbot/
+loglocation=/path/to/voidbot/logs/
 
 echo "
     ******************************
